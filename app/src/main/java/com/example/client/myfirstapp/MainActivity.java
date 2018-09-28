@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
      EditText number1,number2;
      TextView result;
-     Button add;
+     Button add,sub;
      LinearLayout mainLayout;
 
     @Override
@@ -28,14 +28,15 @@ public class MainActivity extends AppCompatActivity {
         number2 = (EditText) findViewById(R.id.number2_input);
         result = (TextView) findViewById(R.id.result_text);
         add = (Button) findViewById(R.id.add_button);
+        sub = (Button) findViewById(R.id.sub_button);
         mainLayout = (LinearLayout)findViewById(R.id.mainLayout);
 
         add.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
+                @Override
+                public void onClick(View view) {
                 if((number1.getText().toString().equals(""))||(number2.getText().toString().equals(""))){
                     result.setTextColor(Color.RED);
-                    result.setText(String.valueOf("Empty!"));
+                    result.setText(String.valueOf("Empty field(s)!"));
 
                     //hide a keyboard after displaying of result
                     InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -45,6 +46,31 @@ public class MainActivity extends AppCompatActivity {
                     int num1 = Integer.parseInt(number1.getText().toString());
                     int num2 = Integer.parseInt(number2.getText().toString());
                     int resultNum = num1 + num2;
+                    result.setTextColor(Color.BLACK);
+                    result.setText(String.valueOf(resultNum));
+
+                    //hide a keyboard after displaying of result
+                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
+                }
+            }
+        });
+
+        sub.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                if((number1.getText().toString().equals(""))||(number2.getText().toString().equals(""))){
+                    result.setTextColor(Color.RED);
+                    result.setText(String.valueOf("Empty field(s)!"));
+
+                    //hide a keyboard after displaying of result
+                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(mainLayout.getWindowToken(), 0);
+
+                } else {
+                    int num1 = Integer.parseInt(number1.getText().toString());
+                    int num2 = Integer.parseInt(number2.getText().toString());
+                    int resultNum = num1 - num2;
                     result.setTextColor(Color.BLACK);
                     result.setText(String.valueOf(resultNum));
 
