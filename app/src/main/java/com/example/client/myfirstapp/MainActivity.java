@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if((number1.getText().toString().equals(""))||(number2.getText().toString().equals(""))){
                     result.setTextColor(Color.RED);
-                    result.setTypeface(null, Typeface.NORMAL);
                     result.setText(String.valueOf("Empty!"));
 
                     //hide a keyboard after displaying of result
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                     int num2 = Integer.parseInt(number2.getText().toString());
                     int resultNum = num1 + num2;
                     result.setTextColor(Color.BLACK);
-                    result.setTypeface(null, Typeface.BOLD);
                     result.setText(String.valueOf(resultNum));
 
                     //hide a keyboard after displaying of result

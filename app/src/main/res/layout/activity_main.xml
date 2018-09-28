@@ -27,6 +27,7 @@
 
         <EditText
             android:id="@+id/number1_input"
+            android:maxLength="9"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -53,6 +54,7 @@
 
         <EditText
             android:id="@+id/number2_input"
+            android:maxLength="9"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -81,7 +83,7 @@
 
         <TextView
             android:id="@+id/result_label"
-            android:layout_width="89dp"
+            android:layout_width="86dp"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="Result:"
@@ -91,12 +93,12 @@
 
         <TextView
             android:id="@+id/result_text"
-            android:layout_width="83dp"
+            android:layout_width="wrap_content"
             android:layout_height="42dp"
             android:paddingTop="10dp"
+            android:text=""
             android:textColor="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="24sp" />
 
     </LinearLayout>
 
