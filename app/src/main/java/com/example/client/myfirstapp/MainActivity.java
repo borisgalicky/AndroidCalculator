@@ -2,7 +2,6 @@ package com.example.client.myfirstapp;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,23 +12,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-     EditText number1,number2;
-     TextView result;
-     Button add,sub;
-     LinearLayout mainLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        number1 = (EditText) findViewById(R.id.number1_input);
-        number2 = (EditText) findViewById(R.id.number2_input);
-        result = (TextView) findViewById(R.id.result_text);
-        add = (Button) findViewById(R.id.add_button);
-        sub = (Button) findViewById(R.id.sub_button);
-        mainLayout = (LinearLayout)findViewById(R.id.mainLayout);
+        final EditText number1 = findViewById(R.id.number1_input);
+        final EditText number2 = findViewById(R.id.number2_input);
+        final TextView result = findViewById(R.id.result_text);
+        final Button add = findViewById(R.id.add_button);
+        final Button sub = findViewById(R.id.sub_button);
+        final LinearLayout mainLayout = findViewById(R.id.mainLayout);
 
         add.setOnClickListener(new View.OnClickListener(){
                 @Override
